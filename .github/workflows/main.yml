@@ -32,11 +32,12 @@ jobs:
     - name: build
       run: |
         flutter build web --release
+        mkdir temp1234
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add build/web/*
+        git add temp1234/*
         git commit -m "Publish Artifact" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
