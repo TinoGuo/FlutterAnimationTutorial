@@ -19,6 +19,7 @@ jobs:
       with:
         flutter-version: '1.20.x' # you can use 1.12:  
         channel: 'beta' 
+    - run: flutter config --enable-web
     - run: flutter pub get
     - name: build
       run: |
