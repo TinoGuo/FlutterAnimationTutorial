@@ -1,0 +1,34 @@
+name: Flutter Web Build CI
+
+on: 
+  push:
+    branches: 
+      - master
+jobs: 
+  build-release: 
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@main
+      with:
+        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+        fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '12.x'
+    - uses: subosito/flutter-action@v1
+      with:
+        channel: 'beta' 
+    - run: flutter pub get
+    - name: build
+      run: |
+        flutter build web --release
+        mv build/web/* doc
+    - name: Commit files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "Publish Artifact" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
