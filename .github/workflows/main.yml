@@ -2,6 +2,8 @@ name: Flutter Web Build CI
 
 on: 
   push:
+    paths: 
+      - lib
     branches: 
       - master
 jobs: 
@@ -24,15 +26,15 @@ jobs:
     - name: build
       run: |
         flutter build web --release
-        rm -rf doc/* | mv -f build/web/* doc
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add .
+        git add build/web/*
         git commit -m "Publish Artifact" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: gh-pages
+#         directory: build/web
