@@ -2,7 +2,14 @@ name: Flutter Web Build CI
 
 on: 
   push:
-    paths: ['lib', '.github', '*.yaml', 'android', 'ios', 'web', 'macos']
+    paths: 
+    - 'lib/**'
+    - '.github/**'
+    - '*.yaml'
+    - 'android/**'
+    - 'ios/**'
+    - 'web/**'
+    - 'macos/**'
     branches: 
       - master
 jobs: 
