@@ -24,7 +24,7 @@ jobs:
     - name: build
       run: |
         flutter build web --release
-        mv -f build/web/* doc
+        rm -rf doc/* | mv -f build/web/* doc
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
