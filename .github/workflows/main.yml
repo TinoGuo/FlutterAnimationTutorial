@@ -33,7 +33,8 @@ jobs:
       run: |
         flutter build web --release
         mkdir temp1234
-        cd build | mv -f web/* ../temp1234
+        cd build
+        mv -f web/* ../temp1234
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
