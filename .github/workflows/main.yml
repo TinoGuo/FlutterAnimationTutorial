@@ -33,7 +33,7 @@ jobs:
       run: |
         flutter build web --release
         mkdir temp1234
-        cd build | mv -f web/* ../
+        cd build | mv -f web/* ../temp1234
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
@@ -43,4 +43,5 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: gh-pages
-        force: true
+#         force: true
+        directory: temp1234
