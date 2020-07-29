@@ -32,7 +32,7 @@ jobs:
     - name: build
       run: |
         flutter build web --release
-        mkdir temp1234
+#        mkdir temp1234
         cd build
         mv -f web/* ../
     - name: Commit files
