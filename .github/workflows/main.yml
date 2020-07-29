@@ -34,16 +34,17 @@ jobs:
         flutter build web --release
         mkdir temp1234
         cd build
-        mv -f web/* ../temp1234
+        mv -f web/* ../
     - name: Commit files
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.email "guochenghaha@gmail.com"
+        git config --local user.name "TinoGuo"
+        git status
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: gh-pages
-        directory: temp1234
+#         directory: temp1234
 #         force: true
         
