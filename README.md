@@ -4,6 +4,10 @@ This project is majorly to implement some awesome widgets or animations.
 
 Welcome if you're interested at contributing.
 
+## Try it now!
+
+[Link](https://tinocheng.app/FlutterAnimationTutorial/#/)
+
 ## Widgets & Animations
 
 1. Box shadow animation [Link](lib/src/anim/anim_shadow_box.dart)
