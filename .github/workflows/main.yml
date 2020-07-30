@@ -38,8 +38,8 @@ jobs:
       run: |
         git config --local user.email "guochenghaha@gmail.com"
         git config --local user.name "TinoGuo"
-        git checkout gh-pages
         git add .
+        git checkout gh-pages
         git commit -m "update artifact"
         git status
     - name: Push changes
