@@ -39,8 +39,9 @@ jobs:
         git config --local user.email "guochenghaha@gmail.com"
         git config --local user.name "TinoGuo"
         git add .
-        git checkout gh-pages
         git commit -m "update artifact"
+        git checkout gh-pages
+        git cherry-pick master
         git status
     - name: Push changes
       uses: ad-m/github-push-action@master
