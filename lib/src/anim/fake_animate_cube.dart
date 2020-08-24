@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -145,7 +146,10 @@ class _CubePainter extends CustomPainter {
       }
       path.close();
       canvas.drawPath(path, paint);
-      canvas.drawShadow(path, Colors.black, 1.0, true);
+      if (!kIsWeb) {
+        // this would slow in web platform
+        canvas.drawShadow(path, Colors.black, 1.0, true);
+      }
     }
   }
 
@@ -178,6 +182,6 @@ class _CubePainter extends CustomPainter {
 
   @override
   bool shouldRepaint(CustomPainter oldDelegate) {
-    return true;
+    return false;
   }
 }
