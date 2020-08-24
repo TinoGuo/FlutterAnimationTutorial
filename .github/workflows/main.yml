@@ -44,7 +44,7 @@ jobs:
         git status
         git commit -m "update artifact"
         git checkout gh-pages
-        git cherry-pick master
+        git cherry-pick master --strategy-option theirs
         git status
     - name: Push changes
       uses: ad-m/github-push-action@master
