@@ -22,6 +22,9 @@ Welcome if you're interested at contributing.
 
 <img src="img/galaxy.gif" width="300" />
 
+3. Fake animate perspective cube [Link](lib/src/anim/galaxy.dart)
+
+<img src="img/fake_animate_cube.png" width="300" />
 
 ## License 
 

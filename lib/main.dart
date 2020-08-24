@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:animationtutorial/src/anim/anim_shadow_box.dart';
+import 'package:animationtutorial/src/anim/fake_animate_cube.dart';
 import 'package:animationtutorial/src/anim/galaxy.dart';
 import 'package:animationtutorial/src/anim/squishy_toggle_button.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ class AnimationApp extends StatelessWidget {
         ...AnimShadowBox.routeNameMap,
         ...SquishyToggle.routeNameMap,
         ...Galaxy.routeNameMap,
+        ...FakeAnimateCube.routeNameMap,
       },
     );
   }
@@ -35,6 +37,7 @@ class _MainEntryState extends State<MainEntry> {
     AnimShadowBox.routeNameMap.keys.first,
     SquishyToggle.routeNameMap.keys.first,
     Galaxy.routeNameMap.keys.first,
+    FakeAnimateCube.routeNameMap.keys.first,
   ];
 
   @override
