@@ -40,6 +40,7 @@ jobs:
         git config --local user.name "TinoGuo"
         git add .
         git reset -- pubspec.lock
+        git checkout HEAD -- pubspec.lock
         git status
         git commit -m "update artifact"
         git checkout gh-pages
